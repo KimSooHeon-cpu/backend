@@ -1,0 +1,42 @@
+2025-11-05 11:26:58.812 [INFO ] [Test worker] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+
+2025-11-05 11:26:59.854 [WARN ] [Test worker] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/'], Ant [pattern='/']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 11:26:59.855 [WARN ] [Test worker] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/v3/api-docs/**'], Ant [pattern='/v3/api-docs/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 11:26:59.864 [WARN ] [Test worker] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/favicon.ico'], Ant [pattern='/favicon.ico']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 11:26:59.864 [WARN ] [Test worker] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui/**'], Ant [pattern='/swagger-ui/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 11:26:59.865 [WARN ] [Test worker] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-resources/**'], Ant [pattern='/swagger-resources/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 11:26:59.866 [WARN ] [Test worker] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 11:26:59.866 [WARN ] [Test worker] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/sign-api/exception'], Ant [pattern='/sign-api/exception']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 11:26:59.867 [WARN ] [Test worker] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/__authprobe'], Ant [pattern='/__authprobe']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 11:26:59.867 [WARN ] [Test worker] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 11:27:00.656 [INFO ] [Test worker] c.g.BackendApplicationTests - Started BackendApplicationTests in 6.43 seconds (process running for 8.269)
+
+2025-11-05 11:42:48.179 [INFO ] [Test worker] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gym.BackendApplicationTests]: BackendApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+
+2025-11-05 11:42:48.451 [INFO ] [Test worker] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gym.BackendApplication for test class com.gym.BackendApplicationTests
+
+2025-11-05 11:42:49.203 [INFO ] [background-preinit] o.h.v.i.u.Version - HV000001: Hibernate Validator 8.0.3.Final
+
+2025-11-05 11:42:49.302 [INFO ] [Test worker] c.g.BackendApplicationTests - Starting BackendApplicationTests using Java 17.0.14 with PID 22152 (started by kimsooheon in D:\developer_project\git_work\backend)
+
+2025-11-05 11:42:49.315 [INFO ] [Test worker] c.g.BackendApplicationTests - The following 1 profile is active: "dev"
+
+2025-11-05 11:42:54.336 [INFO ] [Test worker] c.g.s.NewJwtTokenProvider - [init] NewJwtTokenProvider 초기화 완료
+
+2025-11-05 11:42:55.547 [INFO ] [Test worker] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+
+2025-11-05 11:42:57.116 [WARN ] [Test worker] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/'], Ant [pattern='/']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 11:42:57.118 [WARN ] [Test worker] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/v3/api-docs/**'], Ant [pattern='/v3/api-docs/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 11:42:57.118 [WARN ] [Test worker] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/favicon.ico'], Ant [pattern='/favicon.ico']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+

@@ -1,0 +1,14 @@
+2025-10-28 18:02:52.678 [INFO ] [HikariPool-1 connection closer] j.audit - 169. Connection.close() returned 
+
+2025-10-28 18:02:52.977 [INFO ] [HikariPool-1 connection closer] j.audit - 170. Connection.isClosed() returned false
+
+2025-10-28 18:02:52.978 [INFO ] [HikariPool-1 connection closer] j.connection - 170. Connection closed
+
+2025-10-28 18:02:52.978 [INFO ] [HikariPool-1 connection closer] j.audit - 170. Connection.close() returned 
+
+2025-10-28 18:02:52.978 [INFO ] [HikariPool-1 connection closer] j.connection - 170. Connection closed
+
+2025-10-28 18:02:52.978 [INFO ] [HikariPool-1 connection closer] j.audit - 170. Connection.close() returned 
+
+2025-10-28 18:02:52.979 [INFO ] [RMI TCP Connection(487)-127.0.0.1] c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+
