@@ -66,4 +66,13 @@ springdoc:
     
 
 # [251010] File 저장소 (절대경로) - 사용자 정의라서 노란색으로 나옴
-fileUploadPath: C:/developer_project/gym_reservation_files/
+# fileUploadPath: C:/developer_project/gym_reservation_files/
+# [251105] 리눅스 상의 업로드 폴더 변경
+# 사용 예시) 1번 : 업로드 폴더 생성하기
+# root@6ef75e478db6:/usr/local/tomcat/webapps# mkdir gym_reservation_files
+# 사용 예시) 2번 : 업로드 폴더 접근권한 부여
+# root@6ef75e478db6:/usr/local/tomcat/webapps# chmod 777 gym_reservation_files 
+# 예전꺼
+# fileUploadPath: c:/developer_project/gym_reservation_files/ 
+fileUploadPath: /usr/local/tomcat/webapps# mkdir gym_reservation_files/
+
