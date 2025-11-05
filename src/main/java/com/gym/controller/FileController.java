@@ -185,7 +185,8 @@ public class FileController {
 			// [2] react-draft-wysiwyg 에 맞는 응답 구조 구성
 			Map<String, Object> data = new HashMap<>();
 			Map<String, Object> wrapper = new HashMap<>();
-			data.put("link", "http://localhost:8181" + imageUrl);
+			//data.put("link", "http://localhost:8181" + imageUrl); // 이건 로컬 호스트 경로, 리모트 구현 불가능
+			data.put("link", "http://16.176.33.172:8181" + imageUrl);
 			wrapper.put("data", data);
 
 			// [3] 정상 응답

@@ -1,0 +1,12 @@
+2025-11-05 18:01:04.441 [WARN ] [restartedMain] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/__authprobe'], Ant [pattern='/__authprobe']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 18:01:04.443 [WARN ] [restartedMain] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 18:01:04.591 [INFO ] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+
+2025-11-05 18:01:04.602 [INFO ] [restartedMain] o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8181"]
+
+2025-11-05 18:01:04.621 [INFO ] [restartedMain] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8181 (http) with context path '/'
+
+2025-11-05 18:01:04.630 [INFO ] [restartedMain] c.g.BackendApplication - Started BackendApplication in 1.893 seconds (process running for 2.481)
+
