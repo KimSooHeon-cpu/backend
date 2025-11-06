@@ -1,0 +1,56 @@
+2025-11-05 17:27:15.937 [WARN ] [restartedMain] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/__authprobe'], Ant [pattern='/__authprobe']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 17:27:15.941 [WARN ] [restartedMain] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 17:27:16.100 [INFO ] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+
+2025-11-05 17:27:16.115 [INFO ] [restartedMain] o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8181"]
+
+2025-11-05 17:27:16.131 [INFO ] [restartedMain] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8181 (http) with context path '/'
+
+2025-11-05 17:27:16.139 [INFO ] [restartedMain] c.g.BackendApplication - Started BackendApplication in 2.235 seconds (process running for 3.039)
+
+2025-11-05 17:27:38.571 [INFO ] [http-nio-8181-exec-1] o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+
+2025-11-05 17:27:38.571 [INFO ] [http-nio-8181-exec-1] o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+
+2025-11-05 17:27:38.571 [INFO ] [http-nio-8181-exec-1] o.s.w.s.DispatcherServlet - Completed initialization in 0 ms
+
+2025-11-05 17:27:39.381 [INFO ] [http-nio-8181-exec-5] o.s.a.AbstractOpenApiResource - Init duration for springdoc-openapi is: 590 ms
+
+2025-11-05 17:36:28.302 [INFO ] [background-preinit] o.h.v.i.u.Version - HV000001: Hibernate Validator 8.0.3.Final
+
+2025-11-05 17:36:28.346 [INFO ] [restartedMain] c.g.BackendApplication - Starting BackendApplication using Java 17.0.12 with PID 17244 (D:\developer_project\git_work\backend\bin\main started by kimsooheon in D:\developer_project\git_work\backend)
+
+2025-11-05 17:36:28.351 [INFO ] [restartedMain] c.g.BackendApplication - The following 1 profile is active: "dev"
+
+2025-11-05 17:36:28.394 [INFO ] [restartedMain] o.s.b.d.r.ChangeableUrls - The Class-Path manifest attribute in D:\developer_project\repo\gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc8\18.3.0.0\4acaa9ab2b7470fa80f0a8ec416d7ea86608ac8c\ojdbc8-18.3.0.0.jar referenced one or more files that do not exist: file:/D:/developer_project/repo/gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc8/18.3.0.0/4acaa9ab2b7470fa80f0a8ec416d7ea86608ac8c/oraclepki.jar
+
+2025-11-05 17:36:28.395 [INFO ] [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+
+2025-11-05 17:36:28.395 [INFO ] [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+
+2025-11-05 17:36:29.355 [INFO ] [restartedMain] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8181 (http)
+
+2025-11-05 17:36:29.364 [INFO ] [restartedMain] o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8181"]
+
+2025-11-05 17:36:29.365 [INFO ] [restartedMain] o.a.c.c.StandardService - Starting service [Tomcat]
+
+2025-11-05 17:36:29.365 [INFO ] [restartedMain] o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.44]
+
+2025-11-05 17:36:29.394 [INFO ] [restartedMain] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+
+2025-11-05 17:36:29.395 [INFO ] [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 999 ms
+
+2025-11-05 17:36:29.693 [INFO ] [restartedMain] c.g.s.NewJwtTokenProvider - [init] NewJwtTokenProvider 초기화 완료
+
+2025-11-05 17:36:29.898 [INFO ] [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+
+2025-11-05 17:36:30.136 [WARN ] [restartedMain] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/'], Ant [pattern='/']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 17:36:30.136 [WARN ] [restartedMain] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/v3/api-docs/**'], Ant [pattern='/v3/api-docs/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 17:36:30.136 [WARN ] [restartedMain] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/favicon.ico'], Ant [pattern='/favicon.ico']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 17:36:30.136 [WARN ] [restartedMain] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui/**'], Ant [pattern='/swagger-ui/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+

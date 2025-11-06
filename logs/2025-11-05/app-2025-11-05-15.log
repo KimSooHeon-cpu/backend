@@ -1,0 +1,52 @@
+2025-11-05 17:48:16.727 [INFO ] [restartedMain] o.a.c.c.StandardService - Starting service [Tomcat]
+
+2025-11-05 17:48:16.728 [INFO ] [restartedMain] o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.44]
+
+2025-11-05 17:48:16.737 [INFO ] [restartedMain] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+
+2025-11-05 17:48:16.737 [INFO ] [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 171 ms
+
+2025-11-05 17:48:16.797 [INFO ] [restartedMain] c.g.s.NewJwtTokenProvider - [init] NewJwtTokenProvider 초기화 완료
+
+2025-11-05 17:48:16.896 [INFO ] [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+
+2025-11-05 17:48:17.006 [WARN ] [restartedMain] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/'], Ant [pattern='/']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 17:48:17.006 [WARN ] [restartedMain] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/v3/api-docs/**'], Ant [pattern='/v3/api-docs/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 17:48:17.006 [WARN ] [restartedMain] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/favicon.ico'], Ant [pattern='/favicon.ico']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 17:48:17.006 [WARN ] [restartedMain] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui/**'], Ant [pattern='/swagger-ui/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 17:48:17.006 [WARN ] [restartedMain] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-resources/**'], Ant [pattern='/swagger-resources/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 17:48:17.006 [WARN ] [restartedMain] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 17:48:17.006 [WARN ] [restartedMain] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/sign-api/exception'], Ant [pattern='/sign-api/exception']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 17:48:17.006 [WARN ] [restartedMain] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/__authprobe'], Ant [pattern='/__authprobe']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 17:48:17.006 [WARN ] [restartedMain] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 17:48:17.036 [INFO ] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+
+2025-11-05 17:48:17.041 [INFO ] [restartedMain] o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8181"]
+
+2025-11-05 17:48:17.043 [INFO ] [restartedMain] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8181 (http) with context path '/'
+
+2025-11-05 17:48:17.046 [INFO ] [restartedMain] c.g.BackendApplication - Started BackendApplication in 0.497 seconds (process running for 709.86)
+
+2025-11-05 17:48:17.047 [INFO ] [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+
+2025-11-05 17:57:59.046 [INFO ] [File Watcher] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+
+2025-11-05 17:57:59.049 [INFO ] [Thread-27] o.s.b.w.e.t.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+
+2025-11-05 17:57:59.050 [INFO ] [tomcat-shutdown] o.a.c.h.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8181"]
+
+2025-11-05 17:57:59.146 [INFO ] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown - Graceful shutdown complete
+
+2025-11-05 17:57:59.147 [INFO ] [Thread-27] o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8181"]
+
+2025-11-05 17:57:59.199 [INFO ] [restartedMain] c.g.BackendApplication - Starting BackendApplication using Java 17.0.12 with PID 17244 (D:\developer_project\git_work\backend\bin\main started by kimsooheon in D:\developer_project\git_work\backend)
+

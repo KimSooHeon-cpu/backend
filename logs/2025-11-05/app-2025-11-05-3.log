@@ -1,0 +1,48 @@
+2025-11-05 11:42:57.118 [WARN ] [Test worker] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui/**'], Ant [pattern='/swagger-ui/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 11:42:57.134 [WARN ] [Test worker] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-resources/**'], Ant [pattern='/swagger-resources/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 11:42:57.134 [WARN ] [Test worker] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 11:42:57.137 [WARN ] [Test worker] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/sign-api/exception'], Ant [pattern='/sign-api/exception']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 11:42:57.137 [WARN ] [Test worker] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/__authprobe'], Ant [pattern='/__authprobe']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 11:42:57.138 [WARN ] [Test worker] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 11:42:58.242 [INFO ] [Test worker] c.g.BackendApplicationTests - Started BackendApplicationTests in 9.539 seconds (process running for 12.047)
+
+2025-11-05 12:16:45.262 [INFO ] [background-preinit] o.h.v.i.u.Version - HV000001: Hibernate Validator 8.0.3.Final
+
+2025-11-05 12:16:45.452 [INFO ] [restartedMain] c.g.BackendApplication - Starting BackendApplication using Java 17.0.12 with PID 11756 (D:\developer_project\git_work\backend\bin\main started by kimsooheon in D:\developer_project\git_work\backend)
+
+2025-11-05 12:16:45.470 [INFO ] [restartedMain] c.g.BackendApplication - The following 1 profile is active: "dev"
+
+2025-11-05 12:16:45.633 [INFO ] [restartedMain] o.s.b.d.r.ChangeableUrls - The Class-Path manifest attribute in D:\developer_project\repo\gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc8\18.3.0.0\4acaa9ab2b7470fa80f0a8ec416d7ea86608ac8c\ojdbc8-18.3.0.0.jar referenced one or more files that do not exist: file:/D:/developer_project/repo/gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc8/18.3.0.0/4acaa9ab2b7470fa80f0a8ec416d7ea86608ac8c/oraclepki.jar
+
+2025-11-05 12:16:45.635 [INFO ] [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+
+2025-11-05 12:16:45.636 [INFO ] [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+
+2025-11-05 12:16:51.290 [INFO ] [restartedMain] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8181 (http)
+
+2025-11-05 12:16:51.346 [INFO ] [restartedMain] o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8181"]
+
+2025-11-05 12:16:51.355 [INFO ] [restartedMain] o.a.c.c.StandardService - Starting service [Tomcat]
+
+2025-11-05 12:16:51.357 [INFO ] [restartedMain] o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.44]
+
+2025-11-05 12:16:51.547 [INFO ] [restartedMain] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+
+2025-11-05 12:16:51.548 [INFO ] [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5910 ms
+
+2025-11-05 12:16:53.406 [INFO ] [restartedMain] c.g.s.NewJwtTokenProvider - [init] NewJwtTokenProvider 초기화 완료
+
+2025-11-05 12:16:54.627 [INFO ] [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+
+2025-11-05 12:16:56.185 [WARN ] [restartedMain] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/'], Ant [pattern='/']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 12:16:56.187 [WARN ] [restartedMain] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/v3/api-docs/**'], Ant [pattern='/v3/api-docs/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2025-11-05 12:16:56.188 [WARN ] [restartedMain] o.s.s.c.a.w.b.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/favicon.ico'], Ant [pattern='/favicon.ico']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
