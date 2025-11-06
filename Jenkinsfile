@@ -56,9 +56,32 @@ pipeline {
                     error 'Clone Github Repository Failed'
                 }
        		}
-        }		        
+        }		      
+        
+         // React에서 빌딩된 html/css/js 파일들을 Spring Project의  
+        stage('Stage-3 : Copy From React Project To Spring Project') {
 		
-		stage('Stage-3 : Gradle Build in Jenkins & make ROOT.war') {
+			steps {
+			    
+				script {
+				
+					// 기존의 static 폴더의 정적 빌드 파일(index*.html, *.css, *.js) 지우기
+					sh 'rm -rf /var/jenkins_home/workspace/frontend/src/main/resources/static/index*.html'
+					sh 'rm -rf /var/jenkins_home/workspace/frontend/src/main/resources/static/assets/*'
+				
+			    	// css, js -> static 경로(정적 파일 전용 경로)에 복사
+					sh 'cp /var/jenkins_home/workspace/frontend/dist/assets/* /var/jenkins_home/workspace/backend/src/main/resources/static/assets'
+					 
+					// html 파일은 templates(thymeleaf 등의 동적 파일 경로, thymeleaf를 사용하지 않지만 Controller에서 정적 html로 포워딩(forwarding)할 때 인식함) 폴더에 복사
+					sh 'cp /var/jenkins_home/workspace/frontend/dist/*.html /var/jenkins_home/workspace/backend/src/main/resources/templates'				    
+				}
+
+			}
+		          
+  		} //
+          
+		
+		stage('Stage-4 : Gradle Build in Jenkins & make ROOT.war') {
 		
 			steps {							
 				sh 'chmod +x gradlew' // gradlew 빌드 프로그램에 대한 실행 권한(permission : 숫자로는 777) 설정
