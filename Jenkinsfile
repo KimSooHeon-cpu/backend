@@ -43,7 +43,7 @@ pipeline {
         stage('Stage-2 : Clone Github') {
         
             steps {
-                git branch: 'main', 
+                git branch: 'master', 
                 credentialsId: 'gym_reservation_token',
                 url: 'https://github.com/KimSooHeon-cpu/backend.git'
             }
@@ -68,6 +68,7 @@ pipeline {
 				sh 'ls -la ./build/libs' 
 				sh 'cd /var/jenkins_home/workspace/backend' // jenkins workspace 에 위치한 프로젝트 폴더로 이동
 				sh 'pwd' // 폴더 위치 확인
+				sh 'ls -la'
 				sh 'cp build/libs/gym-k.war build/libs/ROOT.war' 
 				// 빌딩된 war 파일을 Tomcat root contextPath("/") 실행할 프로젝트용(ROOT.war)으로 복사
 				// ROOT.war 형태로 프로젝트 파일이 인식되어야 Tomcat에서는 Root Project로 간주하여 실행함				
