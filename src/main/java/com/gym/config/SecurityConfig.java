@@ -149,7 +149,8 @@ public class SecurityConfig {
             	    // 사용자 공개 조회 -------------------------
             	    .requestMatchers(
             	        "/api/facilities",    // 시설 목록 → [GET]
-            	        "/api/facilities/**"  // 시설 단건 → [GET] [20251107]
+            	        // "/api/facilities/*"  // 시설 단건 → [GET]
+            	        "/api/facilities/list"  // 시설 단건 → [GET] [20251107]
             	        // [251107] "/api/boards/*/posts",    // 게시글 목록 → [GET]
             	        // [251107] "/api/boards/*/posts/*"   // 게시글 상세 → [GET]
             	    ).permitAll()
