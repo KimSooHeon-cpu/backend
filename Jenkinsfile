@@ -127,7 +127,7 @@ pipeline {
 		}
 		
 		// Using Docker with Pipeline ex) https://www.jenkins.io/doc/book/pipeline/docker/
-		stage('Stage-4 : Docker CP(Copy) From Jenkins To Tomcat & Tomcat Webapps Launching(Deployment)') {
+		stage('Stage-5 : Docker CP(Copy) From Jenkins To Tomcat & Tomcat Webapps Launching(Deployment)') {
 		
 			steps {
 			    
