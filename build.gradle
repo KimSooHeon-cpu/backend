@@ -76,6 +76,11 @@ ext {
 }
 
 dependencies {
+
+	// ===== thymeleaf (이게 없으면 403 에러 나옴)=====
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf' // return되서 돌아오는건 전부 이게 필요함
+
+
     // ===== 웹/검증/보안 =====
     implementation 'org.springframework.boot:spring-boot-starter-web'        // Spring MVC/내장 톰캣
     implementation 'org.springframework.boot:spring-boot-starter-validation' // Bean Validation(필수)
