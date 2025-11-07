@@ -68,6 +68,22 @@ pipeline {
 					// 기존의 static 폴더의 정적 빌드 파일(index*.html, *.css, *.js) 지우기
 					sh 'rm -rf /var/jenkins_home/workspace/frontend/src/main/resources/static/index*.html'
 					sh 'rm -rf /var/jenkins_home/workspace/frontend/src/main/resources/static/assets/*'
+					
+					// 추가 : 먼저 static, template 경로 있는지 점검하고 없으면 폴더 생성
+					sh """
+						 DIR_NAME_STATIC = "static"
+						 DIR_NAME_TEMPLATES = "templates"
+						 
+						 if [ ! -d "\${DIR_NAME_STATIC}" ] ; then
+						     echo "static 폴더가 없습니다. 폴더 생성하도록 하겠습니다."
+						     mkdir -p "\${DIR_NAME_STATIC}"
+						 fi
+						 
+						 if [ ! -d "\${DIR_NAME_TEMPLATES}" ] ; then
+						     echo "templates 폴더가 없습니다. 폴더 생성하도록 하겠습니다."
+						     mkdir -p "\${DIR_NAME_TEMPLATES}"
+						 fi     
+					"""
 				
 			    	// css, js -> static 경로(정적 파일 전용 경로)에 복사
 					sh 'cp /var/jenkins_home/workspace/frontend/dist/assets/* /var/jenkins_home/workspace/backend/src/main/resources/static/assets'
