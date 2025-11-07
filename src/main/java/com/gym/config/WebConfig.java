@@ -36,5 +36,9 @@ public class WebConfig implements WebMvcConfigurer {
 		// images
 		registry.addResourceHandler("/images/**")
 			.addResourceLocations("classpath:/static/images/");
+		
+		// 파일업로드 이미지 : update_images
+		registry.addResourceHandler("/update_images/**")
+			.addResourceLocations("/usr/local/tomcat/webapps/gym_reservation_files/");
 	}
 }

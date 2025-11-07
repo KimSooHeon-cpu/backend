@@ -75,5 +75,5 @@ springdoc:
 # root@6ef75e478db6:/usr/local/tomcat/webapps# chmod 777 gym_reservation_files 
 # 예전꺼
 # fileUploadPath: c:/developer_project/gym_reservation_files/ 
-fileUploadPath: /usr/local/tomcat/webapps# mkdir gym_reservation_files/
+fileUploadPath: /usr/local/tomcat/webapps/gym_reservation_files/
 
