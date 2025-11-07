@@ -20,11 +20,7 @@ public class WebConfig implements WebMvcConfigurer {
 		// React CSS/JS 경로 등록 "/assets/"
 		registry.addResourceHandler("/assets/**")
 	    		.addResourceLocations("classpath:/static/assets/");
-		
-		// CSS 경로 등록
-		registry.addResourceHandler("/css/**")
-			    .addResourceLocations("classpath:/static/css/");
-		
+				
 		// 모든 정적 자원(js, css, image 등) 경로 등록
 		registry.addResourceHandler("/**")
 	    		.addResourceLocations("classpath:/static/");
