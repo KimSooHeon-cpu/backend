@@ -54,6 +54,7 @@ public class SecurityConfig {
         		"/images/**",               
                 "/static/**", 
                 "/css/**", 
+                "/vite.svg",
                 "/assets/**",
                 "/v3/api-docs/**",
                 "/favicon.ico",

@@ -28,5 +28,9 @@ public class WebConfig implements WebMvcConfigurer {
 		// 모든 정적 자원(js, css, image 등) 경로 등록
 		registry.addResourceHandler("/**")
 	    		.addResourceLocations("classpath:/static/");
+		
+		// React => Backend "/api/api/**"
+		registry.addResourceHandler("/api/api/**")
+	    		.addResourceLocations("classpath:/static/");
 	}
 }
