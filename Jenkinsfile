@@ -70,6 +70,9 @@ pipeline {
 					sh 'rm -rf /var/jenkins_home/workspace/frontend/src/main/resources/static/assets/*'
 					
 					// 추가 : 먼저 static, template 경로 있는지 점검하고 없으면 폴더 생성
+					sh "cd /var/jenkins_home/workspace/frontend/src/main/resources/"
+					sh "pwd"
+					
 					sh """
 						 DIR_NAME_STATIC = "static"
 						 DIR_NAME_TEMPLATES = "templates"
