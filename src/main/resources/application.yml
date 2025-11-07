@@ -30,7 +30,7 @@ mybatis:
 
   configuration:
     # 스네이크 케이스 컬럼명 → 카멜케이스 필드명 자동 매핑
-    map-underscore-to-camel-case: true # 이게 지금 적용이 안됨 [250923]
+    # map-underscore-to-camel-case: true # 이게 지금 적용이 안됨 [250923]
     # -> myBatisConfig에 설정을 옮겨놨음, 기존에 있던거랑 겹쳐서 에러가 발생하고 있음
     # 콘솔에 SQL 출력
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
