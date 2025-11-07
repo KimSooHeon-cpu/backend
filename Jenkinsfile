@@ -74,8 +74,8 @@ pipeline {
 					sh "pwd"
 					
 					sh """
-						 DIR_NAME_STATIC = "static"
-						 DIR_NAME_TEMPLATES = "templates"
+						 DIR_NAME_STATIC = "/var/jenkins_home/workspace/backend/src/main/resources/static"
+						 DIR_NAME_TEMPLATES = "/var/jenkins_home/workspace/backend/src/main/resources/templates"
 						 
 						 if [ ! -d "\${DIR_NAME_STATIC}" ] ; then
 						     echo "static 폴더가 없습니다. 폴더 생성하도록 하겠습니다."
