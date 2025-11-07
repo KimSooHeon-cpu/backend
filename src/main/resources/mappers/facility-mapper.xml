@@ -24,7 +24,8 @@
   </resultMap>
 
   <!-- 목록/검색 -->
-  <select id="selectFacilities" resultMap="FacilityMap">
+  <!-- <select id="selectFacilities" resultMap="FacilityMap"> -->
+  <select id="selectFacilities" resultType="com.gym.domain.facility.Facility">
   	<if test="page == null or size == null">
 	    SELECT
 	      f.facility_id,
