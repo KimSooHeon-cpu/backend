@@ -32,5 +32,9 @@ public class WebConfig implements WebMvcConfigurer {
 		// React => Backend "/api/api/**"
 		registry.addResourceHandler("/api/api/**")
 	    		.addResourceLocations("classpath:/static/");
+
+		// images
+		registry.addResourceHandler("/images/**")
+			.addResourceLocations("classpath:/static/images/");
 	}
 }

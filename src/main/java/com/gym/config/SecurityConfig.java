@@ -48,12 +48,16 @@ public class SecurityConfig {
     // "/static/**", // 20251107 추가
     // "/css/**", // 20251107 추가
     // "/assets/**"  // 20251107 추가
+	// "/images/**"  // 20251107 추가
+	// "/update_images/**"  // 20251107 추가
     @Bean
     WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring().requestMatchers("/",
         		"/images/**",               
                 "/static/**", 
                 "/css/**", 
+                "/images/**",
+                "/update_images/**",
                 "/vite.svg",
                 "/assets/**",
                 "/v3/api-docs/**",
