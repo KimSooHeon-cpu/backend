@@ -45,20 +45,23 @@ public class SecurityConfig {
     }
 
     // security 적용 예외 URL 등록 (Swagger 등)
+    // "/static/**", // 20251107 추가
+    // "/css/**", // 20251107 추가
+    // "/assets/**"  // 20251107 추가
     @Bean
     WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring().requestMatchers("/",
+        		"/images/**",               
+                "/static/**", 
+                "/css/**", 
+                "/assets/**",
                 "/v3/api-docs/**",
                 "/favicon.ico",
                 "/swagger-ui/**",
                 "/swagger-resources/**",
                 "/webjars/**",
                 "/sign-api/exception",
-                "/__authprobe",
-                "/images/**", // 이미지 다운로드 허용
-                "/", // 20251107 추가
-                "/static/**", // 20251107 추가
-                "/assets/**"  // 20251107 추가
+                "/__authprobe"                
                 //,"/api/cms/reservations" // [251021] 테스트
         		//,"/api/membersTEMP/me" //250929회원정보 리엑트 연동을 위한 임시 테스트
                 //,"/api/boards/*/posts/*/comments/**"
