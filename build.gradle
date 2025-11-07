@@ -77,7 +77,7 @@ ext {
 
 dependencies {
 
-    // ===== thymeleaf : 첫 페이지 ===== 
+    // ===== thymeleaf : 첫 페이지 html 용 ===== 
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
     // ===== 웹/검증/보안 =====
