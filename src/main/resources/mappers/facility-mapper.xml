@@ -25,74 +25,145 @@
 
   <!-- 목록/검색 -->
   <select id="selectFacilities" resultMap="FacilityMap">
-    SELECT
-      f.facility_id,
-      f.facility_name,
-      f.member_id,
-      f.instructor_id,
-      f.facility_phone,
-      f.facility_content,
-      f.facility_image_path,
-      f.facility_person_max,
-      f.facility_person_min,
-      f.facility_use,
-      f.facility_reg_date,
-      f.facility_mod_date,
-      TO_CHAR(f.facility_open_time,'HH24:MI') AS facility_open_time,
-      TO_CHAR(f.facility_close_time,'HH24:MI') AS facility_close_time,
-      f.facility_money,
-      f.facility_type <!-- ⚠️ [251001] 카테고리 컬럼 조회 추가 -->
-    FROM facility_tbl f
-    <where>
-      <if test="name != null and name != ''">
-        AND f.facility_name LIKE '%' || #{name} || '%'
-      </if>
-      <if test="facilityUse != null">
-        AND f.facility_use = (CASE WHEN #{facilityUse} THEN 'Y' ELSE 'N' END)
-      </if>
-      <!-- ⚠️ [251001] 카테고리 필터 -->
-      <if test="type != null and type != ''">
-        AND f.facility_type = #{type} 
-      </if>
-    </where>
-
-    <!-- 정렬 -->
-	<choose>
-	  <when test="sort != null and sort != ''">
-	    <choose>
-	      <!-- name -->
-	      <when test="sort == 'name,asc' or sort == 'name'">
-	        ORDER BY f.facility_name ASC
-	      </when>
-	      <when test="sort == 'name,desc'">
-	        ORDER BY f.facility_name DESC
-	      </when>
+  	<if test="page == null or size == null">
+	    SELECT
+	      f.facility_id,
+	      f.facility_name,
+	      f.member_id,
+	      f.instructor_id,
+	      f.facility_phone,
+	      f.facility_content,
+	      f.facility_image_path,
+	      f.facility_person_max,
+	      f.facility_person_min,
+	      f.facility_use,
+	      f.facility_reg_date,
+	      f.facility_mod_date,
+	      TO_CHAR(f.facility_open_time,'HH24:MI') AS facility_open_time,
+	      TO_CHAR(f.facility_close_time,'HH24:MI') AS facility_close_time,
+	      f.facility_money,
+	      f.facility_type <!-- ⚠️ [251001] 카테고리 컬럼 조회 추가 -->
+	    FROM facility_tbl f
+	    <where>
+	      <if test="name != null and name != ''">
+	        AND f.facility_name LIKE '%' || #{name} || '%'
+	      </if>
+	      <if test="facilityUse != null">
+	        AND f.facility_use = (CASE WHEN #{facilityUse} THEN 'Y' ELSE 'N' END)
+	      </if>
+	      <!-- ⚠️ [251001] 카테고리 필터 -->
+	      <if test="type != null and type != ''">
+	        AND f.facility_type = #{type} 
+	      </if>
+	    </where>
 	
-	      <!-- regdate -->
-	      <when test="sort == 'regdate,asc' or sort == 'regdate'">
-	        ORDER BY f.facility_reg_date ASC
-	      </when>
-	      <when test="sort == 'regdate,desc'">
-	        ORDER BY f.facility_reg_date DESC
-	      </when>
-	
-	      <!-- 그 외 -->
-	      <otherwise>
-	        ORDER BY f.facility_id
-	      </otherwise>
-	    </choose>
-	  </when>
-	  <otherwise>
-	    ORDER BY f.facility_id
-	  </otherwise>
-	</choose>
-
+	    <!-- 정렬 -->
+		<choose>
+		  <when test="sort != null and sort != ''">
+		    <choose>
+		      <!-- name -->
+		      <when test="sort == 'name,asc' or sort == 'name'">
+		        ORDER BY f.facility_name ASC
+		      </when>
+		      <when test="sort == 'name,desc'">
+		        ORDER BY f.facility_name DESC
+		      </when>
+		
+		      <!-- regdate -->
+		      <when test="sort == 'regdate,asc' or sort == 'regdate'">
+		        ORDER BY f.facility_reg_date ASC
+		      </when>
+		      <when test="sort == 'regdate,desc'">
+		        ORDER BY f.facility_reg_date DESC
+		      </when>
+		
+		      <!-- 그 외 -->
+		      <otherwise>
+		        ORDER BY f.facility_id
+		      </otherwise>
+		    </choose>
+		  </when>
+		  <otherwise>
+		    ORDER BY f.facility_id
+		  </otherwise>
+		</choose>
+	</if>			
 
     <!-- 페이징{page-1}로 해야지, 1페이지부터 조회됨, 하지만 리턴하는 과정에서 문제가 발생함으로 
     	컨트롤러의 PageResponse<FacilityResponse> pr = facilityService.searchFacilities(name, null, page-1, size, null, facilityType);처리 -->
     <if test="page != null and size != null">
-      OFFSET #{page} * #{size} ROWS FETCH NEXT #{size} ROWS ONLY
+      <!-- OFFSET #{page} * #{size} ROWS FETCH NEXT #{size} ROWS ONLY -->
+      SELECT *  
+	  FROM (SELECT m.*,  
+	             FLOOR((ROWNUM - 1) / #{size} + 1) page  
+	      FROM (
+				    SELECT
+				      f.facility_id,
+				      f.facility_name,
+				      f.member_id,
+				      f.instructor_id,
+				      f.facility_phone,
+				      f.facility_content,
+				      f.facility_image_path,
+				      f.facility_person_max,
+				      f.facility_person_min,
+				      f.facility_use,
+				      f.facility_reg_date,
+				      f.facility_mod_date,
+				      TO_CHAR(f.facility_open_time,'HH24:MI') AS facility_open_time,
+				      TO_CHAR(f.facility_close_time,'HH24:MI') AS facility_close_time,
+				      f.facility_money,
+				      f.facility_type <!-- ⚠️ [251001] 카테고리 컬럼 조회 추가 -->
+				    FROM facility_tbl f
+				    <where>
+				      <if test="name != null and name != ''">
+				        AND f.facility_name LIKE '%' || #{name} || '%'
+				      </if>
+				      <if test="facilityUse != null">
+				        AND f.facility_use = (CASE WHEN #{facilityUse} THEN 'Y' ELSE 'N' END)
+				      </if>
+				      <!-- ⚠️ [251001] 카테고리 필터 -->
+				      <if test="type != null and type != ''">
+				        AND f.facility_type = #{type} 
+				      </if>
+				    </where>
+				
+				    <!-- 정렬 -->
+					<choose>
+					  <when test="sort != null and sort != ''">
+					    <choose>
+					      <!-- name -->
+					      <when test="sort == 'name,asc' or sort == 'name'">
+					        ORDER BY f.facility_name ASC
+					      </when>
+					      <when test="sort == 'name,desc'">
+					        ORDER BY f.facility_name DESC
+					      </when>
+					
+					      <!-- regdate -->
+					      <when test="sort == 'regdate,asc' or sort == 'regdate'">
+					        ORDER BY f.facility_reg_date ASC
+					      </when>
+					      <when test="sort == 'regdate,desc'">
+					        ORDER BY f.facility_reg_date DESC
+					      </when>
+					
+					      <!-- 그 외 -->
+					      <otherwise>
+					        ORDER BY f.facility_id
+					      </otherwise>
+					    </choose>
+					  </when>
+					  <otherwise>
+					    ORDER BY f.facility_id
+					  </otherwise>
+					</choose>
+					
+		           ) m  
+		      )  
+		WHERE page = #{page + 1}
     </if>
+    
   </select>
 
   <select id="countFacilities" resultType="long">
