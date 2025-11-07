@@ -118,8 +118,8 @@ public class SecurityConfig {
             	        "/api/cms/reservations",   //[251021] 예약 조회
             	        "/api/cms/reservations/**",   //[251021] 예약 신청/변경/조회/삭제
             	        
-            	        "/api/boards/*/posts",    // 게시글 등록 → [POST]
-            	        "/api/boards/*/posts/*",  // 게시글 수정/삭제 → [PUT/DELETE]
+            	        // [251107] "/api/boards/*/posts",    // 게시글 등록 → [POST]
+            	        // [251107] "/api/boards/*/posts/*",  // 게시글 수정/삭제 → [PUT/DELETE]
             	        // "/api/comments/**",       // 댓글 등록/수정/삭제 → [POST/PUT/DELETE]
             	        "/api/payments",          // 결제 등록 → [POST]
             	        "/api/payments/search"    // 결제 목록/검색 → [GET]
@@ -149,9 +149,9 @@ public class SecurityConfig {
             	    // 사용자 공개 조회 -------------------------
             	    .requestMatchers(
             	        "/api/facilities",    // 시설 목록 → [GET]
-            	        "/api/facilities/*",  // 시설 단건 → [GET]
-            	        "/api/boards/*/posts",    // 게시글 목록 → [GET]
-            	        "/api/boards/*/posts/*"   // 게시글 상세 → [GET]
+            	        "/api/facilities/*"  // 시설 단건 → [GET]
+            	        // [251107] "/api/boards/*/posts",    // 게시글 목록 → [GET]
+            	        // [251107] "/api/boards/*/posts/*"   // 게시글 상세 → [GET]
             	    ).permitAll()
             	                	    
             	    /* =========================== 콘텐츠 권한 분리  =========================== */
@@ -241,9 +241,9 @@ public class SecurityConfig {
             	    //.requestMatchers("/api/cms/boards/**/posts/**/comments/**").permitAll() // [251020] CMS 댓글 조회·삭제 허용
             	    
             	    //[251021] 이후
-            	    .requestMatchers("/api/boards/*/posts/*/comments", "/api/boards/*/posts/*/comments/*").permitAll()
+            	    // [251107] .requestMatchers("/api/boards/*/posts/*/comments", "/api/boards/*/posts/*/comments/*").permitAll()
             	    .requestMatchers("/api/cms/boards/*/posts/*/comments", "/api/cms/boards/*/posts/*/comments/*").permitAll()
-            	    .requestMatchers("/api/boards/*/posts/*/comments/demo").permitAll() // 이건 정상 (맨 끝)
+            	    // [251107] .requestMatchers("/api/boards/*/posts/*/comments/demo").permitAll() // 이건 정상 (맨 끝)
             	    /* ====================== 댓글 권한 분리 [250925 댓글 권한] ====================== */
             	    
             	    
