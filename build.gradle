@@ -76,6 +76,10 @@ ext {
 }
 
 dependencies {
+
+    // ===== thymeleaf : 첫 페이지 ===== 
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
     // ===== 웹/검증/보안 =====
     implementation 'org.springframework.boot:spring-boot-starter-web'        // Spring MVC/내장 톰캣
     implementation 'org.springframework.boot:spring-boot-starter-validation' // Bean Validation(필수)
