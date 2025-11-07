@@ -62,7 +62,8 @@ public class SecurityConfig {
                 "/swagger-resources/**",
                 "/webjars/**",
                 "/sign-api/exception",
-                "/__authprobe"                
+                "/__authprobe",
+                "/api/facilities/list"  // 시설 단건 → [GET] [20251107]
                 //,"/api/cms/reservations" // [251021] 테스트
         		//,"/api/membersTEMP/me" //250929회원정보 리엑트 연동을 위한 임시 테스트
                 //,"/api/boards/*/posts/*/comments/**"
@@ -148,9 +149,9 @@ public class SecurityConfig {
 
             	    // 사용자 공개 조회 -------------------------
             	    .requestMatchers(
-            	        "/api/facilities",    // 시설 목록 → [GET]
+            	        "/api/facilities"    // 시설 목록 → [GET]
             	        // "/api/facilities/*"  // 시설 단건 → [GET]
-            	        "/api/facilities/list"  // 시설 단건 → [GET] [20251107]
+            	        // "/api/facilities/list"  // 시설 단건 → [GET] [20251107]
             	        // [251107] "/api/boards/*/posts",    // 게시글 목록 → [GET]
             	        // [251107] "/api/boards/*/posts/*"   // 게시글 상세 → [GET]
             	    ).permitAll()
