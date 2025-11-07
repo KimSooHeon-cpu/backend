@@ -57,7 +57,8 @@ public class SecurityConfig {
                 "/__authprobe",
                 "/images/**", // 이미지 다운로드 허용
                 "/", // 20251107 추가
-                "/static/**" // 20251107 추가
+                "/static/**", // 20251107 추가
+                "/assets/**"  // 20251107 추가
                 //,"/api/cms/reservations" // [251021] 테스트
         		//,"/api/membersTEMP/me" //250929회원정보 리엑트 연동을 위한 임시 테스트
                 //,"/api/boards/*/posts/*/comments/**"
