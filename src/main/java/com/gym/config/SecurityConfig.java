@@ -112,8 +112,6 @@ public class SecurityConfig {
             		/* ========= 로그인 사용자(일반회원 이상) ========= */
             		// 25년 10월 21일 연동 문제로 위치를 이동시킴 (중간에 예약신청을 막고 있음)
 	            	.requestMatchers(
-	            	// [251107] 추가 : React Route 링크 : /api/board/**
-	            		"/api/board/**",		
             	    //  "/api/members/*",    // 내 정보 조회/수정/삭제 → [GET/PUT/DELETE]
             	        "/api/reservations/**",   // 예약 신청/변경/조회/삭제 → [POST/PUT/GET/DELETE]
             	        
@@ -151,7 +149,7 @@ public class SecurityConfig {
             	    // 사용자 공개 조회 -------------------------
             	    .requestMatchers(
             	        "/api/facilities",    // 시설 목록 → [GET]
-            	        "/api/facilities/*"  // 시설 단건 → [GET]
+            	        "/api/facilities/**"  // 시설 단건 → [GET] [20251107]
             	        // [251107] "/api/boards/*/posts",    // 게시글 목록 → [GET]
             	        // [251107] "/api/boards/*/posts/*"   // 게시글 상세 → [GET]
             	    ).permitAll()
