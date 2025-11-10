@@ -3,6 +3,7 @@ package com.gym.config;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
@@ -41,4 +42,16 @@ public class WebConfig implements WebMvcConfigurer {
 		registry.addResourceHandler("/update_images/**")
 			.addResourceLocations("/usr/local/tomcat/webapps/gym_reservation_files/");
 	}
+
+	// React URL 라우팅을 Spring Boot에서 처리하도록 설정 : 251110
+	@Override
+	public void addViewControllers(ViewControllerRegistry registry) {
+		
+		// WebMvcConfigurer.super.addViewControllers(registry);
+		
+		registry.addViewController("/{path:[^\\.]*}").setViewName("forward:/index.html");
+		registry.addViewController("/**/{path:[^\\.]*}").setViewName("forward:/index.html");
+	}
+	
+	
 }
