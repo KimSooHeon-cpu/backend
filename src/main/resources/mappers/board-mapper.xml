@@ -41,7 +41,6 @@
             board_title,
             board_content,
             board_use,
-            member_id,
             board_num,
             board_file_path      <!-- [251016] 첨부파일 경로 컬럼 추가 -->
         ) VALUES (
@@ -49,7 +48,6 @@
             #{boardTitle},
             #{boardContent},
             #{boardUse, jdbcType=CHAR},
-            #{memberId},
             #{boardNum, jdbcType=CHAR},
             #{boardFilePath, jdbcType=VARCHAR}  <!-- [251016] 첨부파일 경로 바인딩 -->
         )
@@ -125,9 +123,6 @@
             <if test="boardTitle != null and boardTitle != ''">
                 AND board_title LIKE '%' || #{boardTitle} || '%'
             </if>
-            <if test="memberId != null and memberId != ''">
-                AND member_id = #{memberId}
-            </if>
         </where>
         ORDER BY
             board_num ASC, board_id ASC
@@ -146,16 +141,12 @@
             <if test="boardUse != null and boardUse != ''">
                 board_use = #{boardUse, jdbcType=CHAR},
             </if>
-            <if test="memberId != null and memberId != ''">
-                member_id = #{memberId},
-            </if>
             <if test="boardNum != null">
                 board_num = #{boardNum, jdbcType=CHAR},
             </if>
             <if test="boardFilePath != null and boardFilePath != ''">
                 board_file_path = #{boardFilePath},   <!-- [251016] 첨부파일 경로 업데이트 -->
             </if>
-            board_mod_date = SYSDATE
         </set>
         WHERE board_id = #{boardId}
     </update>
