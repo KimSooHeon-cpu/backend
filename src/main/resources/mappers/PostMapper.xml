@@ -83,7 +83,7 @@
   <!-- 게시글 수정: 수정일 SYSDATE, boolean → 'Y'/'N' -->
   <!-- parameterType=PostResponse 유지 (인터페이스와 일치) -->
   <!-- [참고] WHERE는 기존 post_id 단독을 유지 -->
-  <update id="updatePost" parameterType="com.gym.domain.post.PostResponse">
+  <update id="updatePost" parameterType="com.gym.domain.post.Post">
     UPDATE post_tbl SET
       post_title    = #{postTitle},
       post_content  = #{postContent},
