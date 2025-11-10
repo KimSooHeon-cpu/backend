@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 public class HomeController {
 	
-	@GetMapping("/")
+	@GetMapping({"/", "/board"})
 	public String home() {
 		
 		// return "젠킨스와 정상 연동되는지 확인";
