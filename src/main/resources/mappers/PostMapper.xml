@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.gym.mapper.xml.PostMapper">
+<mapper namespace="com.gym.mapper.PostMapper">
 
   <!-- 결과 매핑: PostResponse DTO에 DB 컬럼을 매핑 -->
-  <resultMap id="PostResultMap" type="com.gym.domain.post.PostResponse">
+  <resultMap id="PostResultMap" type="com.gym.domain.post.Post">
     <id     property="postId"       column="post_id"/>
     <result property="boardId"      column="board_id"/>
     <result property="boardPostNo"  column="board_post_no"/>  <!-- [250924추가] 게시판별 번호 -->
