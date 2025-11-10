@@ -48,7 +48,6 @@ public class SecurityConfig {
     @Bean
     WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring().requestMatchers("/",
-<<<<<<< HEAD
         		"/login",
         		"/board/**",
         		"/cms/**",
@@ -59,9 +58,7 @@ public class SecurityConfig {
                 "/update_images/**",
                 "/vite.svg",
                 "/assets/**",
-=======
 				"/board/**",
->>>>>>> 89f41ca039a660b009c0cd159706758963efeb15
                 "/v3/api-docs/**",
                 "/favicon.ico",
                 "/swagger-ui/**",
