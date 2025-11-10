@@ -53,6 +53,7 @@ public class SecurityConfig {
     @Bean
     WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring().requestMatchers("/",
+        		"/login",
         		"/images/**",               
                 "/static/**", 
                 "/css/**", 
