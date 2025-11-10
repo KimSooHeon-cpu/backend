@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 	
-	@GetMapping({"/", "/{path:[^\\.]*}", "/**/{path:[^\\.]*}"})
+	// @GetMapping({"/", "/{path:[^\\.]*}", "/**/{path:[^\\.]*}"})
+	@GetMapping("/")
 	public String home() {
 		
 		return "index"; // 메인 홈페이지 이동
