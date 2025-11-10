@@ -34,7 +34,8 @@ public class PostResponse {
 
     private String memberName;  // 조인 결과, 조회용
 
-    private LocalDateTime postRegDate;
+    //private LocalDateTime postRegDate;
+    private String postRegDate;
 
     private Integer postViewCount;
 
