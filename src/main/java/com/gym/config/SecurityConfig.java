@@ -47,10 +47,7 @@ public class SecurityConfig {
     // security 적용 예외 URL 등록 (Swagger 등)
     @Bean
     WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().requestMatchers("/",
-        		"/login",
-        		"/board/**",
-        		"/cms/**",
+        return (web) -> web.ignoring().requestMatchers("/",        		
         		"/images/**",               
                 "/static/**", 
                 "/css/**", 
