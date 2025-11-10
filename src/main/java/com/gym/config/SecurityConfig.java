@@ -45,21 +45,10 @@ public class SecurityConfig {
     }
 
     // security 적용 예외 URL 등록 (Swagger 등)
-    // "/static/**", // 20251107 추가
-    // "/css/**", // 20251107 추가
-    // "/assets/**"  // 20251107 추가
-	// "/images/**"  // 20251107 추가
-	// "/update_images/**"  // 20251107 추가
     @Bean
     WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring().requestMatchers("/",
-        		"/images/**",               
-                "/static/**", 
-                "/css/**", 
-                "/images/**",
-                "/update_images/**",
-                "/vite.svg",
-                "/assets/**",
+				"/board/**",
                 "/v3/api-docs/**",
                 "/favicon.ico",
                 "/swagger-ui/**",
@@ -67,7 +56,7 @@ public class SecurityConfig {
                 "/webjars/**",
                 "/sign-api/exception",
                 "/__authprobe",
-                "/api/facilities/list"  // 시설 단건 → [GET] [20251107]
+                "/images/**" // 이미지 다운로드 허용
                 //,"/api/cms/reservations" // [251021] 테스트
         		//,"/api/membersTEMP/me" //250929회원정보 리엑트 연동을 위한 임시 테스트
                 //,"/api/boards/*/posts/*/comments/**"
@@ -153,11 +142,10 @@ public class SecurityConfig {
 
             	    // 사용자 공개 조회 -------------------------
             	    .requestMatchers(
-            	        "/api/facilities"    // 시설 목록 → [GET]
-            	        // "/api/facilities/*"  // 시설 단건 → [GET]
-            	        // "/api/facilities/list"  // 시설 단건 → [GET] [20251107]
-            	        // [251107] "/api/boards/*/posts",    // 게시글 목록 → [GET]
-            	        // [251107] "/api/boards/*/posts/*"   // 게시글 상세 → [GET]
+            	        "/api/facilities",    // 시설 목록 → [GET]
+            	        "/api/facilities/*",  // 시설 단건 → [GET]
+            	        "/api/boards/*/posts",    // 게시글 목록 → [GET]
+            	        "/api/boards/*/posts/*"   // 게시글 상세 → [GET]
             	    ).permitAll()
             	                	    
             	    /* =========================== 콘텐츠 권한 분리  =========================== */
@@ -187,8 +175,8 @@ public class SecurityConfig {
             	    /* =========================== 게시판 권한 분리 =========================== */
 
             	    /* ============================= CMS 관리 =========================== */
-            	    // 통계정보
-            	    // .requestMatchers("/api/cms/stats").hasAnyRole("ADMIN")
+            	    // 통계정보 (251022)
+            	    // .requestMatchers("/api/cms/stats").hasAnyRole("ADMIN")// CMS 통계 정보가 권한 때문에 403 에러가 뜸
             	    .requestMatchers("/api/cms/stats", "/api/cms/stats/**", "/api/cms/dashboard/**").hasAnyRole("ADMIN")
             	    // 계좌
             	    .requestMatchers("/api/cms/accounts/**").hasAnyAuthority("관리자","책임자","ROLE_ADMIN","admin")
@@ -237,36 +225,17 @@ public class SecurityConfig {
             	    
             	    /* ====================== 댓글 권한 분리 [250925 댓글 권한] ====================== */
             	    //[251020] 이전
-            	    //.requestMatchers(HttpMethod.GET, "/api/posts/*/comments").permitAll()
-            	    //.requestMatchers(HttpMethod.GET, "/api/posts/*/comments/**").permitAll()
-            	    //http://localhost:5173/api/boards/01/posts/8/comments
-            	    
-            	    
-            	    //.requestMatchers("/api/boards/*/posts/*/comments/**").permitAll() // post 허용 (로그인했을 경우)
-            	    //.requestMatchers("/api/boards/**/posts/**/comments/demo").permitAll() // ⚠️ 테스트용 댓글 등록 임시 허용
-            	    //.requestMatchers("/api/cms/boards/**/posts/**/comments/**").permitAll() // [251020] CMS 댓글 조회·삭제 허용
-            	    
-            	    //[251021] 이후
-            	    .requestMatchers("/api/boards/*/posts/*/comments", "/api/boards/*/posts/*/comments/*").permitAll()
-            	    .requestMatchers("/api/cms/boards/*/posts/*/comments", "/api/cms/boards/*/posts/*/comments/*").permitAll()
-            	    .requestMatchers("/api/boards/*/posts/*/comments/demo").permitAll() // 이건 정상 (맨 끝)
+            	    .requestMatchers("/api/boards/*/posts/*/comments/**").permitAll() // post 허용 (로그인했을 경우)
+            	    .requestMatchers("/api/boards/**/posts/**/comments/demo").permitAll() // ⚠️ 테스트용 댓글 등록 임시 허용
+            	    .requestMatchers("/api/cms/boards/**/posts/**/comments/**").permitAll() // [251020] CMS 댓글 조회·삭제 허용
             	    /* ====================== 댓글 권한 분리 [250925 댓글 권한] ====================== */
             	    
             	    
             	    /* ====================== 회원(사용자) API ====================== */
-	            	// 회원가입(등록): 비로그인 허용 — 입력폼(application/x-www-form-urlencoded)으로 구현 예정
 	            	.requestMatchers(HttpMethod.POST, "/api/members").permitAll()
-	            	
-	            	// 사용자 단건조회/수정: 로그인 필요(본인 확인은 컨트롤러/서비스에서 비밀번호로 재검증)
-	            	//.requestMatchers(HttpMethod.GET,  "/api/members/*").authenticated()
-	            	//.requestMatchers(HttpMethod.PUT,  "/api/members/*").authenticated()
 	            	.requestMatchers(HttpMethod.GET,  "/api/members/me").authenticated()
 	            	.requestMatchers(HttpMethod.PUT,  "/api/members/me").authenticated()
 	            	
-	            	// 테스트
-	            	// .requestMatchers(HttpMethod.GET,  "/api/members/*").permitAll() // [250929]임시로 회원조회가 리엑트와 연동되는지 테스트하려고 전체허용함
-
-	            	// 사용자 '목록/삭제'는 사용자 컨트롤러에선 제공하지 않으므로 차단(혹시 유입되어도 방어)
 	            	.requestMatchers(HttpMethod.GET,    "/api/members").denyAll()
 	            	.requestMatchers(HttpMethod.DELETE, "/api/members/*").denyAll()
 	            	/* ====================== 회원(사용자) API ====================== */
@@ -276,11 +245,10 @@ public class SecurityConfig {
 	            	// ※ 최종 등급 검증은 컨트롤러에서 adminType == "책임자"로만 진행 가능
 	            	.requestMatchers("/api/cms/closed-days/**").hasAnyAuthority("ROLE_ADMIN", "책임자", "admin")
 	            	/* ====================== 회원(CMS) API ====================== */
-
-					// [251110] SPA(리액트) 새로고침 시 403 에러 방지: API가 아닌 모든 GET 요청은 허용하여 index.html로 전달
-            	    .requestMatchers(HttpMethod.GET, "/**").permitAll()
-
-            	    /* ========= 로그인 사용자(일반회원 이상) ========= */
+        
+            	    // [251110] SPA(리액트) 새로고침 시 403 에러 방지: API가 아닌 모든 GET 요청은 허용하여 index.html로 전달
+            	    //.requestMatchers(HttpMethod.GET, "/**").permitAll()
+            	    
             	    .anyRequest().authenticated()
             	);
 
