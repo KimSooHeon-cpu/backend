@@ -54,6 +54,7 @@ public class SecurityConfig {
     WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring().requestMatchers("/",
         		"/login",
+        		"/board/**",
         		"/images/**",               
                 "/static/**", 
                 "/css/**", 
