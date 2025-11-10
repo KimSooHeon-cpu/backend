@@ -256,6 +256,11 @@ public class SecurityConfig {
 	            	.requestMatchers(HttpMethod.GET,  "/api/members/me").authenticated()
 	            	.requestMatchers(HttpMethod.PUT,  "/api/members/me").authenticated()
 	            	
+	            	
+	            	// 251110 변경
+	            	.requestMatchers(HttpMethod.GET,  "/**").permitAll() 
+	            	
+	            	            	
 	            	// 테스트
 	            	// .requestMatchers(HttpMethod.GET,  "/api/members/*").permitAll() // [250929]임시로 회원조회가 리엑트와 연동되는지 테스트하려고 전체허용함
 
