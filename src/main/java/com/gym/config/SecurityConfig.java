@@ -257,7 +257,7 @@ public class SecurityConfig {
 	            	/* ====================== 회원(CMS) API ====================== */
         
             	    // [251110] SPA(리액트) 새로고침 시 403 에러 방지: API가 아닌 모든 GET 요청은 허용하여 index.html로 전달
-            	    //.requestMatchers(HttpMethod.GET, "/**").permitAll()
+            	    .requestMatchers(HttpMethod.GET, "/**").permitAll()
             	    
             	    .anyRequest().authenticated()
             	);
