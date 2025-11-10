@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.gym.mapper.PostMapper">
+<mapper namespace="com.gym.mapper.xml.PostMapper">
 
   <!-- 결과 매핑: PostResponse DTO에 DB 컬럼을 매핑 -->
-  <resultMap id="PostResultMap" type="com.gym.domain.post.Post">
+  <resultMap id="PostResultMap" type="com.gym.domain.post.PostResponse">
     <id     property="postId"       column="post_id"/>
     <result property="boardId"      column="board_id"/>
     <result property="boardPostNo"  column="board_post_no"/>  <!-- [250924추가] 게시판별 번호 -->
@@ -83,7 +83,7 @@
   <!-- 게시글 수정: 수정일 SYSDATE, boolean → 'Y'/'N' -->
   <!-- parameterType=PostResponse 유지 (인터페이스와 일치) -->
   <!-- [참고] WHERE는 기존 post_id 단독을 유지 -->
-  <update id="updatePost" parameterType="com.gym.domain.post.Post">
+  <update id="updatePost" parameterType="com.gym.domain.post.PostResponse">
     UPDATE post_tbl SET
       post_title    = #{postTitle},
       post_content  = #{postContent},
