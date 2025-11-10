@@ -57,12 +57,12 @@ public class WebConfig implements WebMvcConfigurer {
 		// allows client-side URLs to be bookmarked.
 		
 		// Single directory level - no need to exclude "api"
-		registry.addViewController("/{x:[\\w\\-]+}")
-		        .setViewName("forward:/index.html");
+		//registry.addViewController("/{x:[\\w\\-]+}")
+		//        .setViewName("forward:/index.html");
 		
 		// Multi-level directory path, need to exclude "api" on the first part of the path
-		registry.addViewController("/{x:^(?!api$).*$}/**/{y:[\\w\\-]+}")
-		        .setViewName("forward:/index.html");
+		//registry.addViewController("/{x:^(?!api$).*$}/**/{y:[\\w\\-]+}")
+		//       .setViewName("forward:/index.html");
 	}
 	
 	
