@@ -276,7 +276,10 @@ public class SecurityConfig {
 	            	// ※ 최종 등급 검증은 컨트롤러에서 adminType == "책임자"로만 진행 가능
 	            	.requestMatchers("/api/cms/closed-days/**").hasAnyAuthority("ROLE_ADMIN", "책임자", "admin")
 	            	/* ====================== 회원(CMS) API ====================== */
-            	    
+
+					// [251110] SPA(리액트) 새로고침 시 403 에러 방지: API가 아닌 모든 GET 요청은 허용하여 index.html로 전달
+            	    .requestMatchers(HttpMethod.GET, "/**").permitAll()
+
             	    /* ========= 로그인 사용자(일반회원 이상) ========= */
             	    .anyRequest().authenticated()
             	);
