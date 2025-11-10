@@ -49,8 +49,8 @@ public class WebConfig implements WebMvcConfigurer {
 		
 		// WebMvcConfigurer.super.addViewControllers(registry);
 		
-		registry.addViewController("/")
-        		.setViewName("forward:/index.html");
+		//registry.addViewController("/")
+        //		.setViewName("forward:/index.html");
 
 		// Map "/word", "/word/word", and "/word/word/word" - except for anything starting with "/api/..." or ending with
 		// a file extension like ".js" - to index.html. By doing this, the client receives and routes the url. It also
