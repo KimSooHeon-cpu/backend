@@ -41,7 +41,8 @@ public class CmsStatsController {
 
     // [3] 시설별 예약신청 샅개 비율 통계
     @Operation(summary = "시설별 예약 상태 통계", description = "5가지 시설별 완료·대기·취소 비율 조회")
-    @GetMapping("/dashboard/facility-status")
+    //@GetMapping("/dashboard/facility-status")
+    @GetMapping("/stats/facilities")
     public List<Map<String, Object>> getFacilityStatusStats() {
         log.info("[CmsStatsController] 시설별 예약 상태 통계 요청 수신");
         List<Map<String, Object>> list = cmsStatsMapper.selectFacilityStatusStats();
