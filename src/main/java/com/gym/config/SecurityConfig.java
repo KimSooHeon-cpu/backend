@@ -275,6 +275,9 @@ public class SecurityConfig {
 	            	// CMS 회원 관리: ROLE_ADMIN만 1차 허용
 	            	// ※ 최종 등급 검증은 컨트롤러에서 adminType == "책임자"로만 진행 가능
 	            	.requestMatchers("/api/cms/closed-days/**").hasAnyAuthority("ROLE_ADMIN", "책임자", "admin")
+	            	
+	            	// frontend URL(/cms)로 관리자 접근 인가로 설정
+	            	.requestMatchers("/cms/**").hasAnyAuthority("ROLE_ADMIN", "책임자", "admin")
 	            	/* ====================== 회원(CMS) API ====================== */
             	    
             	    /* ========= 로그인 사용자(일반회원 이상) ========= */
