@@ -21,7 +21,7 @@ public class HomeController {
 		return "index"; // 메인 홈페이지 이동
 	}
 	
-	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN', '책임자', 'admin')") // 관리자 권한만 접근 가능
+	// @PreAuthorize("hasAnyAuthority('ROLE_ADMIN', '책임자', 'admin')") // 관리자 권한만 접근 가능
 	@GetMapping({"/cms", "/cms/home", "/cms/user", "/cms/facility", "/cms/reservation"})
 	public String cms(Authentication auth) {
 		
