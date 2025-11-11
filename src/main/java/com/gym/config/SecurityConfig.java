@@ -159,10 +159,11 @@ public class SecurityConfig {
             	    .requestMatchers(HttpMethod.POST, "/api/cms/contents").permitAll() // ⚠️ 첨부파일 업로드 허용
             	    /* =========================== 콘텐츠 권한 분리  =========================== */
             	    
-            	    /* =========================== 계좌 권한 분리 =========================== */
+            	     /* =========================== 계좌 권한 분리 =========================== */
             	    // --- 계좌 등록/목록/대표지정/삭제: 로그인 본인만 허용 ---
             	    .requestMatchers(HttpMethod.POST, "/api/accounts").authenticated()           // POST: 계좌 등록
-            	    .requestMatchers(HttpMethod.GET, "/api/members/*/accounts").authenticated() // GET: 회원별 계좌 목록 조회
+            	    .requestMatchers(HttpMethod.GET, "/api/accounts/main").authenticated()    // GET: 대표 계좌 목록 조회
+            	    .requestMatchers(HttpMethod.GET, "/api/accounts/sub").authenticated()     // GET: 일반 계좌 목록 조회
             	    .requestMatchers(HttpMethod.PATCH, "/api/accounts/*/main").authenticated()  // PATCH: 대표계좌 설정
             	    .requestMatchers(HttpMethod.DELETE, "/api/accounts/*").authenticated()      // DELETE: 계좌 삭제
             	    /* =========================== 계좌 권한 분리 =========================== */
@@ -170,7 +171,8 @@ public class SecurityConfig {
             	    /* =========================== 카드 권한 분리 =========================== */
             	    // --- 카드 등록/목록/대표지정/삭제: 로그인 본인만 허용 ---
             	    .requestMatchers(HttpMethod.POST, "/api/cards").authenticated()            // POST: 카드 등록
-            	    .requestMatchers(HttpMethod.GET, "/api/members/*/cards").authenticated()   // GET: 회원별 카드 목록 조회
+            	    .requestMatchers(HttpMethod.GET, "/api/cards/main").authenticated()       // GET: 대표 카드 목록 조회
+            	    .requestMatchers(HttpMethod.GET, "/api/cards/sub").authenticated()        // GET: 일반 카드 목록 조회
             	    .requestMatchers(HttpMethod.PATCH, "/api/cards/*/main").authenticated()    // PATCH: 대표카드 설정
             	    .requestMatchers(HttpMethod.DELETE, "/api/cards/*").authenticated()        // DELETE: 카드 삭제
             	    /* =========================== 카드 권한 분리 =========================== */
