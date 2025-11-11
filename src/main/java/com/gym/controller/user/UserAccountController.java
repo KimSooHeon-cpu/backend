@@ -250,16 +250,19 @@ public class UserAccountController {
         
     	// 251111 교정
     	// String memberId = auth.getName(); // ✅ 이미 필터에서 저장된 로그인 ID
-    	memberId = auth.getName()== null ? memberId : auth.getName(); // ✅ 이미 필터에서 저장된 로그인 ID
+    	// memberId = auth.getName()== null ? memberId : auth.getName(); // ✅ 이미 필터에서 저장된 로그인 ID
         log.info("[계좌조회] 대표계좌 조회 요청 - memberId: {}", memberId);
         return ApiResponse.ok(accountService.getMainAccounts(memberId));
     }
 
     @CrossOrigin("*")
     @Operation(summary = "일반계좌 조회", description = "로그인한 회원의 대표가 아닌 계좌 목록 조회")
+    // 251111 교정 memberId 인자받도록 수정
     @GetMapping("/api/accounts/sub")
-    public ApiResponse<?> getSubAccounts(Authentication auth) {
-        String memberId = auth.getName(); // ✅ 로그인 ID 바로 가져옴
+    // public ApiResponse<?> getSubAccounts(Authentication auth) {
+    public ApiResponse<?> getSubAccounts(@RequestParam("memberId") String memberId, Authentication auth) {
+    	
+        // String memberId = auth.getName(); // ✅ 로그인 ID 바로 가져옴    	
         log.info("[계좌조회] 일반계좌 조회 요청 - memberId: {}", memberId);
         return ApiResponse.ok(accountService.getSubAccounts(memberId));
     }
