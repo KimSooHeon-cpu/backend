@@ -277,7 +277,8 @@ public class SecurityConfig {
 	            	.requestMatchers("/api/cms/closed-days/**").hasAnyAuthority("ROLE_ADMIN", "책임자", "admin")
 	            	
 	            	// frontend URL(/cms)로 관리자 접근 인가로 설정 : /cms/login은 제외하기 위해 일일이 나열
-	            	.requestMatchers("/cms", "/cms/home", "/cms/user", "/cms/facility", "/cms/contents", "/cms/reservation").hasAnyAuthority("ROLE_ADMIN", "책임자", "admin")
+	            	.requestMatchers("/cms", "/cms/home", "/cms/user", "/cms/facility", "/cms/contents", 
+	            			"/cms/reservation", "/dashboard/facility-status").hasAnyAuthority("ROLE_ADMIN", "책임자", "admin")
 	            	/* ====================== 회원(CMS) API ====================== */
             	    
             	    /* ========= 로그인 사용자(일반회원 이상) ========= */
