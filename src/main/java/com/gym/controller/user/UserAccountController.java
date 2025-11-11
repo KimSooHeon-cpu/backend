@@ -244,8 +244,13 @@ public class UserAccountController {
     @CrossOrigin("*")
     @Operation(summary = "대표계좌 조회", description = "로그인한 회원의 대표 계좌만 조회")
     @GetMapping("/api/accounts/main")
-    public ApiResponse<?> getMainAccounts(Authentication auth) {
-        String memberId = auth.getName(); // ✅ 이미 필터에서 저장된 로그인 ID
+    // public ApiResponse<?> getMainAccounts(Authentication auth) {
+    // 251111 교정 memberId 인자받도록 수정
+    public ApiResponse<?> getMainAccounts(@RequestParam("memberId") String memberId, Authentication auth) {
+        
+    	// 251111 교정
+    	// String memberId = auth.getName(); // ✅ 이미 필터에서 저장된 로그인 ID
+    	memberId = auth.getName()== null ? memberId : auth.getName(); // ✅ 이미 필터에서 저장된 로그인 ID
         log.info("[계좌조회] 대표계좌 조회 요청 - memberId: {}", memberId);
         return ApiResponse.ok(accountService.getMainAccounts(memberId));
     }
