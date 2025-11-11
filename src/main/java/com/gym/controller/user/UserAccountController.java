@@ -262,6 +262,7 @@ public class UserAccountController {
     // public ApiResponse<?> getSubAccounts(Authentication auth) {
     public ApiResponse<?> getSubAccounts(@RequestParam("memberId") String memberId, Authentication auth) {
     	
+    	// 251111 교정
         // String memberId = auth.getName(); // ✅ 로그인 ID 바로 가져옴    	
         log.info("[계좌조회] 일반계좌 조회 요청 - memberId: {}", memberId);
         return ApiResponse.ok(accountService.getSubAccounts(memberId));
