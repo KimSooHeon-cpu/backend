@@ -10,10 +10,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 	
 	// @GetMapping({"/", "/{path:[^\\.]*}", "/**/{path:[^\\.]*}"})
-	@GetMapping({"/", "/board/**", "/facilities/**", "/contents/**", "/login", "/join", "/cms/**", "/mypage" })
+	@GetMapping({"/", "/board/**", "/facilities/**", "/contents/**", "/login", "/join", "/mypage" })
 	public String home() {
 		
 		return "index"; // 메인 홈페이지 이동
+	}
+	
+	@GetMapping({"/cms", "/cms/home" })
+	public String cms() {
+		
+		return "redirect:/cms/login"; // 관리자 로그인 페이지로 이동
 	}
 	
 	// 푸시가 안되고 있음, non-fast-forward 상태...이유는? 
