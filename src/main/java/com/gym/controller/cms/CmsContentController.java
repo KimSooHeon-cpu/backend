@@ -15,6 +15,7 @@ import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -40,7 +41,8 @@ import com.gym.mapper.annotation.FileMapper; // 💾 추가
 @RequestMapping("/api/cms/contents")
 @RequiredArgsConstructor
 @Tag(name = "04.Contents-CMS", description = "CMS 콘텐츠 관리(목록/등록/수정/삭제)")
-@Log4j2
+// @Log4j2
+@Slf4j // 251112 교정
 public class CmsContentController {
 
 	private final ContentService contentService;
