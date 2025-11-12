@@ -83,18 +83,18 @@ public class SecurityConfig {
     }
 
     // ⚠️ [251007 추가] CORS 설정 Bean (전역 허용)
-    @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
-        configuration.addAllowedOrigin("*");
-        configuration.addAllowedOriginPattern("*"); // 모든 Origin 허용
-        configuration.addAllowedMethod("*");        // 모든 HTTP Method 허용
-        configuration.addAllowedHeader("*");        // 모든 Header 허용
-        configuration.setAllowCredentials(true);    // 쿠키·인증정보 허용
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
-        return source;
-    }
+//    @Bean
+//    public CorsConfigurationSource corsConfigurationSource() {
+//        CorsConfiguration configuration = new CorsConfiguration();
+//        configuration.addAllowedOrigin("*");
+//        configuration.addAllowedOriginPattern("*"); // 모든 Origin 허용
+//        configuration.addAllowedMethod("*");        // 모든 HTTP Method 허용
+//        configuration.addAllowedHeader("*");        // 모든 Header 허용
+//        configuration.setAllowCredentials(true);    // 쿠키·인증정보 허용
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        source.registerCorsConfiguration("/**", configuration);
+//        return source;
+//    }
     // ⚠️ [251007 추가] CORS 설정 Bean (전역 허용)
     
     // [수정] 필터체인 메서드 1개로 통합(세션 무상태 + JWT 필터 등록 추가)
