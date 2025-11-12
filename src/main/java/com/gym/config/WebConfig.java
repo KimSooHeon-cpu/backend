@@ -1,10 +1,8 @@
 package com.gym.config;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
@@ -42,29 +40,12 @@ public class WebConfig implements WebMvcConfigurer {
 		// 파일업로드 이미지 : update_images
 		registry.addResourceHandler("/update_images/**")
 			.addResourceLocations("/usr/local/tomcat/webapps/gym_reservation_files/");
+		
+		// cms 파일업로드 이미지 미리보기 링크 : 
+		// ex) http://16.176.33.172:8181/images/content/images/e849c2be-74c4-4ca9-8d39-31bb13be296d_gym-1048852_1280.png
+		registry.addResourceHandler("/images/content/images/**")
+			.addResourceLocations("/usr/local/tomcat/webapps/gym_reservation_files/images/");
+		
 	}
-
-	// React URL 라우팅을 Spring Boot에서 처리하도록 설정 : 251110
-	@Override
-	public void addViewControllers(ViewControllerRegistry registry) {
-		
-		// WebMvcConfigurer.super.addViewControllers(registry);
-		
-		//registry.addViewController("/")
-        //		.setViewName("forward:/index.html");
-
-		// Map "/word", "/word/word", and "/word/word/word" - except for anything starting with "/api/..." or ending with
-		// a file extension like ".js" - to index.html. By doing this, the client receives and routes the url. It also
-		// allows client-side URLs to be bookmarked.
-		
-		// Single directory level - no need to exclude "api"
-		//registry.addViewController("/{x:[\\w\\-]+}")
-		//        .setViewName("forward:/index.html");
-		
-		// Multi-level directory path, need to exclude "api" on the first part of the path
-		//registry.addViewController("/{x:^(?!api$).*$}/**/{y:[\\w\\-]+}")
-		//       .setViewName("forward:/index.html");
-	}
-	
 	
 }
