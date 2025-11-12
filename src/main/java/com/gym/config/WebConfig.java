@@ -41,11 +41,6 @@ public class WebConfig implements WebMvcConfigurer {
 		registry.addResourceHandler("/update_images/**")
 			.addResourceLocations("/usr/local/tomcat/webapps/gym_reservation_files/");
 		
-		// cms 파일업로드 이미지 미리보기 링크 : 
-		// ex) http://16.176.33.172:8181/images/content/images/e849c2be-74c4-4ca9-8d39-31bb13be296d_gym-1048852_1280.png
-		registry.addResourceHandler("/images/content/images/**")
-			.addResourceLocations("/usr/local/tomcat/webapps/gym_reservation_files/images/");
-		
 	}
 	
 }

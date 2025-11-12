@@ -52,7 +52,7 @@ public class SecurityConfig {
     WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring().requestMatchers("/",
         		"/images/**",               
-        		"/images/content/images/**",
+        		"/upload_images/**",
                 "/static/**", 
                 "/css/**", 
                 "/assets/**",
