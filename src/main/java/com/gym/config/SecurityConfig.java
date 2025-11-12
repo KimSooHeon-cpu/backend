@@ -190,7 +190,8 @@ public class SecurityConfig {
             	    // 카드
             	    .requestMatchers("/api/cms/cards/**").hasAnyAuthority("관리자","책임자","ROLE_ADMIN","admin")
             	    // 콘텐츠 
-            	    .requestMatchers("/api/cms/contents/**").hasAnyRole("ADMIN")            	    
+            	    // .requestMatchers("/api/cms/contents/**").hasAnyRole("ADMIN")            	    
+            	    .requestMatchers("/api/cms/contents/**").hasAnyAuthority("관리자","책임자","ROLE_ADMIN","admin") // 251112 교정
             	    // 시설
             	    .requestMatchers("/api/cms/facilities/**").hasAnyAuthority("강사","책임자","ROLE_ADMIN","admin")
             	    // 게시판
