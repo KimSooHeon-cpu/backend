@@ -227,7 +227,7 @@ public class CmsContentController {
 	        Authentication auth) {
 		
 		// 임시 로그 : 251112
-		log.info("콘텐츠 수정 : " + contentId);
+		log.info("------ 콘텐츠 수정 : " + contentId);
 
 	    // ---------- 로그인 및 권한 로그(등록과 동일 포맷) ----------
 	    var auths = SecurityContextHolder.getContext().getAuthentication();
