@@ -38,7 +38,7 @@ import java.util.List;
 import java.util.Map;
 import com.gym.mapper.annotation.FileMapper; // 💾 추가
 
-@CrossOrigin(origins = "*") // 251112 추가
+@CrossOrigin(origins = "http://16.176.33.172") // 251112 추가
 @RestController
 @RequestMapping("/api/cms/contents")
 @RequiredArgsConstructor
