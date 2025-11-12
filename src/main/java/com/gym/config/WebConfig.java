@@ -1,6 +1,7 @@
 package com.gym.config;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -10,6 +11,18 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {
 	
+	
+	// 251112 추가 (CORS 대응)
+	@Override
+	public void addCorsMappings(CorsRegistry registry) {
+
+		registry.addMapping("/**")
+	          .allowedOrigins("http://16.176.33.172")
+	          .allowedMethods("GET", "POST", "PUT", "DELETE")
+	          .allowedHeaders("*")
+	          .allowCredentials(true);	     
+	}
+
 	// 정적 자원(css, js, image 등) 등록
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
