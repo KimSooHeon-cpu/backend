@@ -87,7 +87,7 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.addAllowedOrigin("http://16.176.33.172"); // 251112 패치
-        configuration.addAllowedOrigin("http://16.176.33.172:8181/"); // 251112 패치        
+        // configuration.addAllowedOrigin("http://16.176.33.172:8181/"); // 251112 패치        
         // configuration.addAllowedOriginPattern("*"); // 모든 Origin 허용
         configuration.addAllowedMethod("*");        // 모든 HTTP Method 허용
         configuration.addAllowedHeader("*");        // 모든 Header 허용
@@ -192,8 +192,8 @@ public class SecurityConfig {
             	    // 카드
             	    .requestMatchers("/api/cms/cards/**").hasAnyAuthority("관리자","책임자","ROLE_ADMIN","admin")
             	    // 콘텐츠 
-            	    // .requestMatchers("/api/cms/contents/**").hasAnyRole("ADMIN")
-            	    .requestMatchers("/api/cms/contents/**").permitAll()
+            	    .requestMatchers("/api/cms/contents/**").hasAnyRole("ADMIN")
+            	    // .requestMatchers("/api/cms/contents/**").permitAll()
             	    // 시설
             	    .requestMatchers("/api/cms/facilities/**").hasAnyAuthority("강사","책임자","ROLE_ADMIN","admin")
             	    // 게시판
