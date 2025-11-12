@@ -157,8 +157,6 @@ public class SecurityConfig {
             	    // --- 콘텐츠 단건 조회: 누구나(permitAll) - 링크 클릭 시 단건 조회 허용 ---
             	    .requestMatchers(HttpMethod.GET, "/api/contents/**").permitAll() // GET: 콘텐츠 단건 조회 (뷰/링크)
             	    .requestMatchers(HttpMethod.POST, "/api/cms/contents").permitAll() // ⚠️ 첨부파일 업로드 허용 // 251112
-            	    // .requestMatchers("/api/cms/contents/**").hasAnyAuthority("관리자","책임자","ROLE_ADMIN","admin") // 251112
-            	    // .requestMatchers("/api/cms/contents/**").permitAll() //hasAnyAuthority("관리자","책임자","ROLE_ADMIN","admin") // 251112
             	    /* =========================== 콘텐츠 권한 분리  =========================== */
             	    
             	     /* =========================== 계좌 권한 분리 =========================== */
@@ -193,7 +191,6 @@ public class SecurityConfig {
             	    .requestMatchers("/api/cms/cards/**").hasAnyAuthority("관리자","책임자","ROLE_ADMIN","admin")
             	    // 콘텐츠 
             	    .requestMatchers("/api/cms/contents/**").hasAnyRole("ADMIN")
-            	    // .requestMatchers("/api/cms/contents/**").hasAnyAuthority("관리자","책임자","ROLE_ADMIN","admin") // 251112
             	    // 시설
             	    .requestMatchers("/api/cms/facilities/**").hasAnyAuthority("강사","책임자","ROLE_ADMIN","admin")
             	    // 게시판
