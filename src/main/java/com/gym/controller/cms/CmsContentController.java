@@ -270,8 +270,16 @@ public class CmsContentController {
 	    req.setContentUse(orKeep(contentUse, curr.getContentUse()));
 	    req.setContentNum((contentNum != null) ? contentNum : curr.getContentNum());
 
+	    log.info("콘텐츠 업데이트 직전");
+	    
 	    try {
+	    	
+	    	log.info("콘텐츠 업데이트 진입");
+	    	
 	        int affected = contentService.updateContent(req);
+	        
+	        log.info("콘텐츠 업데이트 이후");
+	        
 	        return ResponseEntity.ok(ApiResponse.ok(affected));
 	    } catch (RuntimeException ex) {
 	    	
