@@ -16,7 +16,7 @@ public class HomeController {
 	
 	// @GetMapping({"/", "/{path:[^\\.]*}", "/**/{path:[^\\.]*}"})
 	@GetMapping({"/", "/board/**", "/facilities/**", "/contents/**", "/login", "/join", "/mypage", "/cms/login",
-		"/cms", "/cms/home", "/cms/user", "/cms/facility", "/cms/reservation" })
+		"/cms", "/cms/home", "/cms/user", "/cms/facility", "/cms/reservation", "cms/contents/**" })
 	public String home() {
 		
 		return "index"; // 메인 홈페이지 이동
