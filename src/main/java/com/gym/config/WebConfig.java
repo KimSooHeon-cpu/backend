@@ -11,17 +11,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {
 	
-	// 251112 추가 (CORS 대응)
-//	@Override
-//	public void addCorsMappings(CorsRegistry registry) {
-//
-//		registry.addMapping("/**")
-//	          .allowedOriginPatterns("*")
-//	          .allowedMethods("*")
-//	          .allowedHeaders("*")
-//	          .allowCredentials(true);
-//	}
-
 	// 정적 자원(css, js, image 등) 등록
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
