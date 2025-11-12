@@ -86,8 +86,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.addAllowedOrigin("http://16.176.33.172"); // 251112 패치
-        // configuration.addAllowedOriginPattern("*"); // 모든 Origin 허용
+        configuration.addAllowedOriginPattern("*"); // 모든 Origin 허용
         configuration.addAllowedMethod("*");        // 모든 HTTP Method 허용
         configuration.addAllowedHeader("*");        // 모든 Header 허용
         configuration.setAllowCredentials(true);    // 쿠키·인증정보 허용
