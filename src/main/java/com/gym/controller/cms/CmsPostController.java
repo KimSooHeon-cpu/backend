@@ -157,7 +157,8 @@ public class CmsPostController {
      * CMS 정책: 작성자ID 불변, 공지/일반 select 허용
      */
     @Operation(summary = "CMS 게시글 수정(폼)")
-    @PutMapping(value = "/{postId}", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    // @PutMapping(value = "/{postId}", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+	@PostMapping(value = "/update/{postId}", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE) // Post 방식으로 변경
     public String updatePost(
             @Parameter(description = "게시판ID(경로변수)") @PathVariable("boardId") Long boardId,
             @Parameter(description = "게시글ID(경로변수)") @PathVariable("postId") Long postId,
