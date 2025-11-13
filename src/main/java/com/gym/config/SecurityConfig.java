@@ -54,6 +54,7 @@ public class SecurityConfig {
         		"/images/**",               
         		"/update_images/**",
         		"/update_images2/**",
+        		"/ex_image/**",
                 "/static/**", 
                 "/css/**", 
                 "/assets/**",

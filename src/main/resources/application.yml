@@ -76,4 +76,3 @@ springdoc:
 # 예전꺼
 # fileUploadPath: c:/developer_project/gym_reservation_files/ 
 fileUploadPath: /usr/local/tomcat/webapps/gym_reservation_files/
-
