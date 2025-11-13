@@ -25,16 +25,6 @@ public class HomeController {
 		return "index"; // 메인 홈페이지 이동
 	}
 	
-	@GetMapping("/ex_image/{image_filename}")
-	@ResponseBody
-	public ModelAndView uploadImages(@PathVariable("image_filename") String imageFilename) {
-		
-		ModelAndView mv = new ModelAndView("upload_image_viewer");
-		mv.addObject("upload_image", imageFilename);
-			
-		return mv;
-	}
-	
 	/*
 	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN', '책임자', 'admin')") // 관리자 권한만 접근 가능
 	@GetMapping({"/cms", "/cms/home", "/cms/user", "/cms/facility", "/cms/reservation"})
