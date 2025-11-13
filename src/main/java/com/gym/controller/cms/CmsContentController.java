@@ -200,7 +200,7 @@ public class CmsContentController {
 	@Operation(summary = "콘텐츠 수정", description = "수정할 콘텐츠 번호 입력 후, 텍스트박스 입력 폼으로 수정(작성자ID는 로그인ID로 고정)")
 	@PostMapping(value = "/update/{contentId}", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE) // [251113]
 	// @PostMapping(value = "/update/{contentId}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-	@PutMapping(value = "/{contentId}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE) //^ [251112] Content-Type이 불일치해서 MULTIPART로 변경함	 
+	// @PutMapping(value = "/{contentId}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE) //^ [251112] Content-Type이 불일치해서 MULTIPART로 변경함	 
 	public ResponseEntity<ApiResponse<Integer>> updateContent(@PathVariable("contentId") Long contentId,
 
 	        @Parameter(name = "contentTitle", description = "콘텐츠 제목(미입력 시 기존값 유지)", required = false,
@@ -273,6 +273,12 @@ public class CmsContentController {
 	    req.setContentType(orKeep(contentType, curr.getContentType()));
 	    req.setContentUse(orKeep(contentUse, curr.getContentUse()));
 	    req.setContentNum((contentNum != null) ? contentNum : curr.getContentNum());
+	    
+	    // 업로드 파일에 대한 처리 부분이 없음 => 처리부분 추가 [251113]
+	    if (file != null) {
+	    	String contentFilePath = file.getName();
+	    	req.setContentFilePath(contentFilePath);
+	    } // 
 	    
 	    log.info("콘텐츠 업데이트 직전");
 	    
