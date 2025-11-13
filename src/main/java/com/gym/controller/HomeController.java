@@ -4,6 +4,9 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -16,11 +19,20 @@ public class HomeController {
 	
 	// @GetMapping({"/", "/{path:[^\\.]*}", "/**/{path:[^\\.]*}"})
 	@GetMapping({"/", "/board/**", "/facilities/**", "/contents/**", "/login", "/join", "/mypage", "/cms/login",
-		"/cms", "/cms/home", "/cms/user", "/cms/facility", "/cms/reservation", "/cms/contents/**", "/cms/stats/**",
-		"/upload_images/**"})
+		"/cms", "/cms/home", "/cms/user", "/cms/facility", "/cms/reservation", "/cms/contents/**", "/cms/stats/**" })
 	public String home() {
 		
 		return "index"; // 메인 홈페이지 이동
+	}
+	
+	@GetMapping("/upload_images/images/{image_filename}")
+	@ResponseBody
+	public ModelAndView uploadImages(@PathVariable("image_filename") String imageFilename) {
+		
+		ModelAndView mv = new ModelAndView("upload_image_viewer");
+		mv.addObject("upload_image", imageFilename);
+			
+		return mv;
 	}
 	
 	/*
