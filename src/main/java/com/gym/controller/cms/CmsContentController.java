@@ -235,7 +235,7 @@ public class CmsContentController {
 		log.info("------ 콘텐츠 수정 : " + contentId);
 		log.info("------ params(contentTitle) : " + contentTitle);
 		log.info("------ params(contentContent) : " + contentContent);
-		log.info("------ params(업로드 파일명) : " + file.getOriginalFilename());
+		log.info("------ params(업로드 파일명) : {}", file == null ? "첨부파일없음" : file.getOriginalFilename());
 
 	    // ---------- 로그인 및 권한 로그(등록과 동일 포맷) ----------
 	    var auths = SecurityContextHolder.getContext().getAuthentication();
