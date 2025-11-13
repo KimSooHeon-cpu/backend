@@ -30,7 +30,7 @@ public class HomeController {
 	public ModelAndView uploadImages(@PathVariable("image_filename") String imageFilename) {
 		
 		ModelAndView mv = new ModelAndView("upload_image_viewer");
-		mv.addObject("upload_image", imageFilename);
+		mv.addObject("upload_image", "images/"+imageFilename);
 			
 		return mv;
 	}
