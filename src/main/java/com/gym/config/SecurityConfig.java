@@ -53,6 +53,7 @@ public class SecurityConfig {
         return (web) -> web.ignoring().requestMatchers("/",
         		"/images/**",               
         		"/update_images/**",
+        		"/update_images2/**",
                 "/static/**", 
                 "/css/**", 
                 "/assets/**",
