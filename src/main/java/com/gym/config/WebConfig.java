@@ -40,6 +40,10 @@ public class WebConfig implements WebMvcConfigurer {
 		// 파일업로드 이미지 : update_images
 		registry.addResourceHandler("/update_images/**")
 			.addResourceLocations("/usr/local/tomcat/webapps/gym_reservation_files/");
+				
+		// 파일 다운로드 경로 : download_path
+		registry.addResourceHandler("/download_path/**")
+			.addResourceLocations("/usr/local/tomcat/webapps/gym_reservation_files/");
 		
 	}
 	
