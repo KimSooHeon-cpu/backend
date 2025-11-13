@@ -159,7 +159,7 @@ public class SecurityConfig {
             	    // --- 콘텐츠 단건 조회: 누구나(permitAll) - 링크 클릭 시 단건 조회 허용 ---
             	    .requestMatchers(HttpMethod.GET, "/api/contents/**").permitAll() // GET: 콘텐츠 단건 조회 (뷰/링크)
             	    .requestMatchers(HttpMethod.POST, "/api/cms/contents").permitAll() // ⚠️ 첨부파일 업로드 허용 // 251112
-            	    .requestMatchers(HttpMethod.POST, "/api/cms/contents/update").permitAll() // ⚠️ 첨부파일 업로드 허용 // 251113 추가
+            	    .requestMatchers(HttpMethod.POST, "/api/cms/contents/update/**").permitAll() // ⚠️ 첨부파일 업로드 허용 // 251113 추가
             	    
             	    /* =========================== 콘텐츠 권한 분리  =========================== */
             	    
