@@ -238,7 +238,7 @@ public class CmsContentController {
 		log.info("------ 콘텐츠 수정 : " + contentId);
 		log.info("------ params(contentTitle) : " + contentTitle);
 		log.info("------ params(contentContent) : " + contentContent);
-		log.info("------ params(업로드 파일명) : {}", contentFilePath.trim().equals("") ? "첨부파일없음" : contentFilePath);
+		log.info("------ params(업로드 파일명) : {}", contentFilePath == null ? "첨부파일없음" : contentFilePath);
 
 	    // ---------- 로그인 및 권한 로그(등록과 동일 포맷) ----------
 	    var auths = SecurityContextHolder.getContext().getAuthentication();
@@ -280,7 +280,7 @@ public class CmsContentController {
 	    // 업로드 파일에 대한 처리 부분이 없음 => 처리부분 추가 [251113]
 	    // 부가적으로 언급하지만, 프론트엔드에서 이미 실질적인 파일업로드 처리는 되었고, 
 	    // 현재 이 위치에서는 파일업로드 처리가 되었다면 파일명만 저장하면 됨.  
-	    if (contentFilePath.trim().equals("") == false) {
+	    if (contentFilePath  != null) {
 	    	req.setContentFilePath(contentFilePath);
 	    } // 
 	    
