@@ -226,16 +226,18 @@ public class CmsContentController {
 	        		// ⚠️ [251013 추가] 첨부파일 입력
 	       	        @Parameter(name = "file", description = "첨부파일(선택)", required = false)
 	       	        // @RequestPart(value = "file", required = false) MultipartFile file,
-					@RequestParam(value = "file", required = false) MultipartFile file, //^ [251112] Content-Type이 불일치해서 RequestParam으로 변경함
-
-
+					// @RequestParam(value = "file", required = false) MultipartFile file, //^ [251112] Content-Type이 불일치해서 RequestParam으로 변경함
+					@RequestParam(value = "contentFilePath", required = false) String contentFilePath, 
+					//^ [251113] 이미 업로드가 처리되었으므로 별도의 MultipartFile 객체는 불필요함. 
+					// 파일명만 저장하면 되므로 String으로 처리하도록 수정 조치
+					
 	        Authentication auth) {
 		
 		// 임시 로그 : 251112
 		log.info("------ 콘텐츠 수정 : " + contentId);
 		log.info("------ params(contentTitle) : " + contentTitle);
 		log.info("------ params(contentContent) : " + contentContent);
-		log.info("------ params(업로드 파일명) : {}", file == null ? "첨부파일없음" : file.getOriginalFilename());
+		log.info("------ params(업로드 파일명) : {}", contentFilePath.trim().equals("") ? "첨부파일없음" : contentFilePath);
 
 	    // ---------- 로그인 및 권한 로그(등록과 동일 포맷) ----------
 	    var auths = SecurityContextHolder.getContext().getAuthentication();
@@ -275,8 +277,9 @@ public class CmsContentController {
 	    req.setContentNum((contentNum != null) ? contentNum : curr.getContentNum());
 	    
 	    // 업로드 파일에 대한 처리 부분이 없음 => 처리부분 추가 [251113]
-	    if (file != null) {
-	    	String contentFilePath = file.getName();
+	    // 부가적으로 언급하지만, 프론트엔드에서 이미 실질적인 파일업로드 처리는 되었고, 
+	    // 현재 이 위치에서는 파일업로드 처리가 되었다면 파일명만 저장하면 됨.  
+	    if (contentFilePath.trim().equals("") == false) {
 	    	req.setContentFilePath(contentFilePath);
 	    } // 
 	    
