@@ -44,6 +44,9 @@ public class WebConfig implements WebMvcConfigurer {
 		registry.addResourceHandler("/update_images2/**")
 			.addResourceLocations("/usr/local/tomcat/img/");
 		
+		registry.addResourceHandler("/ex_image/**")
+			.addResourceLocations("/usr/local/tomcat/img/");
+		
 	}
 	
 }
