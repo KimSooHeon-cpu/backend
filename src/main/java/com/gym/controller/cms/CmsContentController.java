@@ -224,7 +224,8 @@ public class CmsContentController {
 	        		   @RequestParam(name = "contentNum", required = false) Integer contentNum,
 	        
 	        		// ⚠️ [251013 추가] 첨부파일 입력
-	       	        @Parameter(name = "file", description = "첨부파일(선택)", required = false)
+	       	        // @Parameter(name = "file", description = "첨부파일(선택)", required = false)
+        		   @Parameter(name = "contentFilePath", description = "첨부파일(선택)", required = false)
 	       	        // @RequestPart(value = "file", required = false) MultipartFile file,
 					// @RequestParam(value = "file", required = false) MultipartFile file, //^ [251112] Content-Type이 불일치해서 RequestParam으로 변경함
 					@RequestParam(value = "contentFilePath", required = false) String contentFilePath, 
