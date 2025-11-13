@@ -234,7 +234,7 @@ public class CmsContentController {
 					
 	        Authentication auth) {
 		
-		// 임시 로그 : 251112
+		// 임시 로그 : 251112 / 251113
 		log.info("------ 콘텐츠 수정 : " + contentId);
 		log.info("------ params(contentTitle) : " + contentTitle);
 		log.info("------ params(contentContent) : " + contentContent);
